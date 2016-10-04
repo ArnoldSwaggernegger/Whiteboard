@@ -24,7 +24,7 @@
         $(function () {
             $('[data-toggle="popover"]').popover()
         })
-</script>
+    </script>
 
 </head>
 
@@ -43,54 +43,19 @@
           <a class="navbar-brand" href="#">Whiteboard</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
           <ul class="nav navbar-nav">
-            <li><a href="#"> Home <span class="sr-only">(current)</span></a></li>
-            
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          
-          <form class="navbar-form navbar-left">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Link</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+            <li><a href="#"> Home </a></li>
+            <li><a href="#"> Link </a></li>
+          </ul> 
+        </div>
+        
+      </div>
     </nav>
     
     <div class="container">
     <div class="row"> 
+    
         <div class="page-header"> 
             <h1> Requirements engineering </h1> 
             
@@ -115,35 +80,54 @@
                     <li><a href="#"> Moderne Databases </a></li>
                   </ul>
             </div>
+            
+            <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Assignments <span class="caret"></span>
+                </button>
+                
+                <ul class="dropdown-menu">
+                    <li><a href="#"> Course information </a></li>
+                    <li><a href="#"> Course materials </a></li>
+                    <li><a href="#"> Assignments </a></li>
+                    <li><a href="#"> Groups </a></li>
+                    <li><a href="#"> Grades <span class="badge">2</span> </a></li>
+                  </ul>
+            </div>
         </div>
     </div>
     
     <div class="row">
       
       <div class="col-md-4"> 
+      
         <h2> Calender </h2>
         
         <table class="table">
-            <tr> <th>Ma</th> <th>Di</th> <th>Wo</th> <th>Do</th> <th>Vr</th> <th>Za</th> <th>Zo</th> </tr>
+            <tr> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th> <th>Sun</th> </tr>
             <tr> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td>1</td> <td>2</td> </tr>
-            <tr class="active"> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> <td>8</td> <td>9</td> </tr>
-            <tr> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> <td tabindex="0" class="danger" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Overdue" data-content="Group Assignment 2 for Requirements Engineering is due on Thursday 15 September." data-placement="right">15</td> <td tabindex="0" class="warning" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Due soon" data-content="Reading Assignment 2 for Requirements Engineering is due on Friday 16 September." data-placement="right">16</td> </tr>
+            <tr> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> <td>8</td> <td>9</td> </tr>
+            <tr> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> 
+                <td tabindex="0" class="btn-danger" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Overdue" data-content="Group Assignment 2 for Requirements Engineering is due on Thursday 15 October." data-placement="top">15</td> 
+                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Due soon" data-content="Reading Assignment 2 for Requirements Engineering is due on Friday 16 October." data-placement="top">16</td> </tr>
             <tr> <td>17</td> <td>18</td> <td>19</td> <td>20</td> <td>21</td> <td>22</td> <td>23</td> </tr>
             <tr> <td>24</td> <td>25</td> <td>26</td> <td>27</td> <td>28</td> <td>29</td> <td>30</td> </tr>
             <tr> <td>31</td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> </tr>
         </table>
-        <h2> Categories </h2>
+        
+        <h2> Navigation </h2>
+        
         <button type="button" class="btn btn-default btn-lg btn-block"> Course information </button>
         <button type="button" class="btn btn-default btn-lg btn-block"> Course materials </button>
         <button type="button" class="btn btn-default btn-lg btn-block"> Assignments </button>
         <button type="button" class="btn btn-default btn-lg btn-block"> Groups </button>
         <button type="button" class="btn btn-default btn-lg btn-block"> Grades <span class="badge">2</span> </button>
+        
       </div>
       
       <div class="col-md-8"> 
       
-      
-        <h2> Group Assignment 2 <small> Deadline: Thursday 15 September. </small> <span class="label label-danger"> Overdue </span> </h2>
+        <h2> Group Assignment 2 <small> Deadline: Saturday 15 October. </small> <span class="label label-danger"> Overdue </span> </h2>
       
         <p class="lead"> RESEARCH: [2 hours] <p>  
 
@@ -153,33 +137,31 @@
 
         <p class="lead"> INTERVIEWS: [2 hours] </p> 
 
-        All students,  but one day part timers:  report back in workshop Tuesday September 13
-
-        One day part time students: report back in workshop Monday September 19
-
         <p>Conduct three video-recorded interviews. Publish these, and a one minute montage as described in the assignment for week 1, on your website.</p>
         <ul>
-            <li>Conduct your interviews, take some care to prepare your questions (focus on the task activities, know how to respond to answers to invite more (detailed) information).</li>
-            
-            <li>After each interview examine the information you got. Reflect with your partner. Which questions were productive? What do you know about the reliability of the answers you get? How can you get more reliable information?</li>
-            
-            <li>Base at least one interview on the paper "Apprenticing with the customer" (see under "Reading ...") : i.e. one of the interviewees is being interviewed at the place where they are reading their books, while they show how they read their books.</li>
-            
+            <li>Conduct your interviews, take some care to prepare your questions (focus on the task activities, know how to respond to answers to invite more (detailed) information).</li>            
+            <li>After each interview examine the information you got. Reflect with your partner. Which questions were productive? What do you know about the reliability of the answers you get? How can you get more reliable information?</li>            
+            <li>Base at least one interview on the paper "Apprenticing with the customer" (see under "Reading ...") : i.e. one of the interviewees is being interviewed at the place where they are reading their books, while they show how they read their books.</li>        
             <li>Log interesting findings and effective questions.</li>
         </ul>
         
         <p class="lead">ORGANIZE: [1 hours]</p>
+        
         <p> You begin to gather quite a lot of data. Take one to two hours to set up your administration in such a way that it is easy to continuously restructure your RE focus, remember: you still have to learn what the right questions are. Discuss the ideas from the paper on Contextual Design how you structure your data here. </p>
       
-        <h2> Reading Assignment 2 <small> Deadline: Friday 16 September. </small> <span class="label label-warning"> Due Soon </span> </h2>
+        <h2> Reading Assignment 2 <small> Deadline: Sunday 16 October. </small> <span class="label label-warning"> Due Soon </span> </h2>
+        
         <p class="lead"> This week's theme: Getting rich and useful data </p>
+        
         <p> Explore literature about emphatic listening, active listening and identify five verbal and non verbal cues that stimulate the interviewee in providing elaborate information. </p>
+       
         <ul>
             <li> Apply techniques from 1 and 2 techniques in your interviews and assess your partner on the cues you identified in 1 and 2. </li>
             <li> Explain from the theory how memory works why some of the techniques yield more reliable memories than others. </li>
             <li> Explain from the theory how memory works why some of the techniques yield more reliable memories than others. </li>
             <li> Experiment with the technique as described in "Apprenticing with the customer", can you see that this helps yield more reliable memories? </li>
         </ul>
+        
         <p> Ad 1 and 2 Stakeholders are a rich source of information. For a requirements engineer it is important to get the right information from interviews. Getting people to elaborately talk on topic is sometimes a challenge. The words we use, how we say it, our posture, our reactions, moments of silence are all of impact (this is what I refer to as cues in the assignment). </p>
         
         <p> This is important in a wide range of fields: e.g. journalists, interviewers, psychologists, doctors as well as requirements engineers. </p>
@@ -188,25 +170,9 @@
         
         <p><ins> This is inserted text. </ins></p>
         
-        <blockquote>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-        
       </div>
       
     </div>
-    
-    <div class="row"> 
-      <div class="col-md-12"> 
-        <div class="jumbotron">
-          <h1>Jumbotron</h1>
-          <p>Large text for attention! Here comes more text.</p>
-          <p><a class="btn btn-primary btn-lg" href="#" role="button">Click Here!</a></p>
-        </div>
-      </div>
-    </div>
-    
     </div>
 </body>
 
