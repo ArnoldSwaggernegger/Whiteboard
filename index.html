@@ -45,6 +45,21 @@
                 templateUrl : "assignments.htm",
                 resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Assignments' } }
             })
+            .when("/re/assignments/week1", {
+                controller: "MyController",
+                templateUrl : "assignments0.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Assignments' } }
+            })
+            .when("/re/assignments/week2", {
+                controller: "MyController",
+                templateUrl : "assignments1.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Assignments' } }
+            })
+            .when("/re/assignments/week3", {
+                controller: "MyController",
+                templateUrl : "assignments2.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Assignments' } }
+            })
             .when("/re/groups", {
                 controller: "MyController",
                 templateUrl : "groups.htm",
@@ -65,7 +80,7 @@
     
 </head>
 
-<body ng-app="myApp" ng-init="submitted1 = false; submitted2 = false;">
+<body ng-app="myApp" ng-init="submitted1 = false; submitted2 = false; submitted3 = false;">
     
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
