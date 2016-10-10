@@ -4,176 +4,145 @@
 
 <head>
     <meta charset="utf-8">
-    <meta description="">
+    <meta description="A prototype of a deadline calender feature for a digital learning environment. Made with AngularJS and Bootstrap.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title> Whiteboard DLO </title>
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title> Whiteboard </title>
 
-    <!-- Optional theme -->
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="angular.min.js"></script>
+    <script src="angular-route.min.js"></script>
+    <link  href="bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="bootstrap.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <script> 
-        $(function () {
-            $('[data-toggle="popover"]').popover()
-        })
+    <script>
+        var app = angular.module("myApp", ["ngRoute"]);
+        
+        app.config(function($routeProvider) {
+            $routeProvider
+            .when("/", {
+                controller: "MyController",
+                templateUrl : "home.htm",
+                resolve : { state: function() { return 'Home' }, tab: function() { return  ''} }
+            })
+            .when("/re/announcements", {
+                controller: "MyController",
+                templateUrl : "announcements.htm",
+                resolve : { state: function() { return 'Requirements Engineering' }, tab: function() { return 'Announcements' } }
+            })
+            .when("/re/courseinformation", {
+                controller: "MyController",
+                templateUrl : "courseinformation.htm",
+                resolve : { state: function() { return 'Requirements Engineering' }, tab: function() { return 'Course Information' } }
+            })
+            .when("/re/coursematerials", {
+                controller: "MyController",
+                templateUrl : "coursematerials.htm",
+                resolve : { state: function() { return 'Requirements Engineering' }, tab: function() { return 'Course Materials' } }
+            })
+            .when("/re/assignments", {
+                controller: "MyController",
+                templateUrl : "assignments.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Assignments' } }
+            })
+            .when("/re/groups", {
+                controller: "MyController",
+                templateUrl : "groups.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Groups' } }
+            })
+            .when("/re/grades", {
+                controller: "MyController",
+                templateUrl : "grades.htm",
+                resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Grades'} }
+            });
+        });
+        
+        app.controller("MyController", function($scope, state, tab) {
+            $scope.$parent.state = state;
+            $scope.$parent.tab = tab;
+        });
     </script>
-
+    
 </head>
 
-<body>
+<body ng-app="myApp" ng-init="submitted1 = false; submitted2 = false;">
     
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Whiteboard</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
-          <ul class="nav navbar-nav">
-            <li><a href="#"> Home </a></li>
-            <li><a href="#"> Link </a></li>
-          </ul> 
-        </div>
-        
-      </div>
-    </nav>
-    
+<nav class="navbar navbar-default navbar-static-top">
     <div class="container">
-    <div class="row"> 
+  
+        <div class="navbar-header">
+            <!-- 
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button> -->
+            <a class="navbar-brand" href="#/">Whiteboard</a>
+        </div>
+
+        <!--
+        <div class="collapse navbar-collapse" id="navbar-collapse-1"> 
+            <ul class="nav navbar-nav">
+                <li><a href="#"> Home </a></li>
+                <li><a href="#"> Link </a></li>
+             </ul> 
+        </div>
+        -->      
+  </div>
+</nav>
+
+<div class="container"> 
     
+    <div class="row">   
+        <div class="col-md-12">
         <div class="page-header"> 
-            <h1> Requirements engineering </h1> 
             
+            <h1> {{ state }} <small> {{ tab }} </small> </h1> 
+            
+            <!--
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Requirements Engineering <span class="caret"></span>
+                    {{ state }} <span class="caret"></span>
                 </button>
                 
                 <ul class="dropdown-menu">
-                    <li><a href="#"> Home </a></li>
-                    
+                    <li><a href="#/"> Home </a></li>
                     <li role="separator" class="divider"></li>
-                    
                     <li class="dropdown-header">2016</li>
-                    <li><a href="#"> Requirements Engineering </a></li>
-                    <li><a href="#"> Software Testing </a></li>
-                    
+                    <li><a href="#/re/announcements"> Requirements Engineering </a></li>
                     <li class="dropdown-header">2015</li>
-                    <li><a href="#"> Digitale Signaalverwerking </a></li>
-                    <li><a href="#"> Logisch Programmeren en Zoektechnieken </a></li>
-                    <li><a href="#"> Compilerbouw </a></li>
-                    <li><a href="#"> Moderne Databases </a></li>
+                    <li><a> Digitale Signaalverwerking </a></li>
+                    <li><a> Logisch Programmeren en Zoektechnieken </a></li>
+                    <li><a> Compilerbouw </a></li>
+                    <li><a> Moderne Databases </a></li>
+                    
                   </ul>
             </div>
             
-            <div class="btn-group">
+            <div class="btn-group" ng-hide="state == 'Home'">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Assignments <span class="caret"></span>
+                    {{ tab }} <span class="caret"></span>
                 </button>
                 
                 <ul class="dropdown-menu">
-                    <li><a href="#"> Course information </a></li>
-                    <li><a href="#"> Course materials </a></li>
-                    <li><a href="#"> Assignments </a></li>
-                    <li><a href="#"> Groups </a></li>
-                    <li><a href="#"> Grades <span class="badge">2</span> </a></li>
+                    <li><a href="#/re/announcements"> Announcements </a></li>
+                    <li><a href="#/re/courseinformation"> Course information </a></li>
+                    <li><a href="#/re/coursematerials"> Course materials </a></li>
+                    <li><a href="#/re/assignments"> Assignments </a></li>
+                    <li><a href="#/re/groups"> Groups </a></li>
+                    <li><a href="#/re/grades"> Grades </a></li>
                   </ul>
             </div>
+            -->
+            
+        </div>  
         </div>
     </div>
+
+    <div ng-view> </div>
+
+</div>
     
-    <div class="row">
-      
-      <div class="col-md-4"> 
-      
-        <h2> Calender </h2>
-        
-        <table class="table">
-            <tr> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thu</th> <th>Fri</th> <th>Sat</th> <th>Sun</th> </tr>
-            <tr> <td> </td> <td> </td> <td> </td> <td> </td> <td> </td> <td>1</td> <td>2</td> </tr>
-            <tr> <td>3</td> <td>4</td> <td>5</td> <td>6</td> <td>7</td> <td>8</td> <td>9</td> </tr>
-            <tr> <td>10</td> <td>11</td> <td>12</td> <td>13</td> <td>14</td> 
-                <td tabindex="0" class="btn-danger" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Overdue" data-content="Group Assignment 2 for Requirements Engineering is due on Thursday 15 October." data-placement="top">15</td> 
-                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="focus" data-container="body" title="Due soon" data-content="Reading Assignment 2 for Requirements Engineering is due on Friday 16 October." data-placement="top">16</td> </tr>
-            <tr> <td>17</td> <td>18</td> <td>19</td> <td>20</td> <td>21</td> <td>22</td> <td>23</td> </tr>
-            <tr> <td>24</td> <td>25</td> <td>26</td> <td>27</td> <td>28</td> <td>29</td> <td>30</td> </tr>
-            <tr> <td>31</td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> <td>  </td> </tr>
-        </table>
-        
-        <h2> Navigation </h2>
-        
-        <button type="button" class="btn btn-default btn-lg btn-block"> Course information </button>
-        <button type="button" class="btn btn-default btn-lg btn-block"> Course materials </button>
-        <button type="button" class="btn btn-default btn-lg btn-block"> Assignments </button>
-        <button type="button" class="btn btn-default btn-lg btn-block"> Groups </button>
-        <button type="button" class="btn btn-default btn-lg btn-block"> Grades <span class="badge">2</span> </button>
-        
-      </div>
-      
-      <div class="col-md-8"> 
-      
-        <h2> Group Assignment 2 <small> Deadline: Saturday 15 October. </small> <span class="label label-danger"> Overdue </span> </h2>
-      
-        <p class="lead"> RESEARCH: [2 hours] <p>  
-
-        <p> Spend two hours on the web and in the (digital) library to make sense of “how digital learning environments impact the quality of learning”. </p>
-
-        <p> Look at the different digital learning environments and their features. Look at how courses are organised that are given mainly online (coursera /edx). And look at literature about what are the important characteristics of high quality learning. </p>
-
-        <p class="lead"> INTERVIEWS: [2 hours] </p> 
-
-        <p>Conduct three video-recorded interviews. Publish these, and a one minute montage as described in the assignment for week 1, on your website.</p>
-        <ul>
-            <li>Conduct your interviews, take some care to prepare your questions (focus on the task activities, know how to respond to answers to invite more (detailed) information).</li>            
-            <li>After each interview examine the information you got. Reflect with your partner. Which questions were productive? What do you know about the reliability of the answers you get? How can you get more reliable information?</li>            
-            <li>Base at least one interview on the paper "Apprenticing with the customer" (see under "Reading ...") : i.e. one of the interviewees is being interviewed at the place where they are reading their books, while they show how they read their books.</li>        
-            <li>Log interesting findings and effective questions.</li>
-        </ul>
-        
-        <p class="lead">ORGANIZE: [1 hours]</p>
-        
-        <p> You begin to gather quite a lot of data. Take one to two hours to set up your administration in such a way that it is easy to continuously restructure your RE focus, remember: you still have to learn what the right questions are. Discuss the ideas from the paper on Contextual Design how you structure your data here. </p>
-      
-        <h2> Reading Assignment 2 <small> Deadline: Sunday 16 October. </small> <span class="label label-warning"> Due Soon </span> </h2>
-        
-        <p class="lead"> This week's theme: Getting rich and useful data </p>
-        
-        <p> Explore literature about emphatic listening, active listening and identify five verbal and non verbal cues that stimulate the interviewee in providing elaborate information. </p>
-       
-        <ul>
-            <li> Apply techniques from 1 and 2 techniques in your interviews and assess your partner on the cues you identified in 1 and 2. </li>
-            <li> Explain from the theory how memory works why some of the techniques yield more reliable memories than others. </li>
-            <li> Explain from the theory how memory works why some of the techniques yield more reliable memories than others. </li>
-            <li> Experiment with the technique as described in "Apprenticing with the customer", can you see that this helps yield more reliable memories? </li>
-        </ul>
-        
-        <p> Ad 1 and 2 Stakeholders are a rich source of information. For a requirements engineer it is important to get the right information from interviews. Getting people to elaborately talk on topic is sometimes a challenge. The words we use, how we say it, our posture, our reactions, moments of silence are all of impact (this is what I refer to as cues in the assignment). </p>
-        
-        <p> This is important in a wide range of fields: e.g. journalists, interviewers, psychologists, doctors as well as requirements engineers. </p>
-
-        <p> For this assignment you should reference literature. Explore multiple sources. <del> Look at empirical and anecdotal evidence. Provide an annotated bibliography of sources you consider relevant. </del></p>
-        
-        <p><ins> This is inserted text. </ins></p>
-        
-      </div>
-      
-    </div>
-    </div>
 </body>
-
 </html>
