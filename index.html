@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta description="A prototype of a deadline calender feature for a digital learning environment. Made with AngularJS and Bootstrap.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <title> Whiteboard </title>
 
     <script src="jquery-3.1.1.min.js"></script>
@@ -17,7 +17,7 @@
 
     <script>
         var app = angular.module("myApp", ["ngRoute"]);
-        
+
         app.config(function($routeProvider) {
             $routeProvider
             .when("/", {
@@ -71,22 +71,26 @@
                 resolve : { state: function() { return 'Requirements Engineering'}, tab: function() { return 'Grades'} }
             });
         });
-        
-        app.controller("MyController", function($scope, state, tab) {
+
+        app.controller("MyController", function($scope, $location, state, tab) {
             $scope.$parent.state = state;
             $scope.$parent.tab = tab;
+            $scope.go = function ( path ) {
+              $('.popover').hide();
+              $location.path( path );
+            };
         });
     </script>
-    
+
 </head>
 
 <body ng-app="myApp" ng-init="submitted1 = false; submitted2 = false; submitted3 = false;">
-    
+
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
-  
+
         <div class="navbar-header">
-            <!-- 
+            <!--
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -97,30 +101,30 @@
         </div>
 
         <!--
-        <div class="collapse navbar-collapse" id="navbar-collapse-1"> 
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li><a href="#"> Home </a></li>
                 <li><a href="#"> Link </a></li>
-             </ul> 
+             </ul>
         </div>
-        -->      
+        -->
   </div>
 </nav>
 
-<div class="container"> 
-    
-    <div class="row">   
+<div class="container">
+
+    <div class="row">
         <div class="col-md-12">
-        <div class="page-header"> 
-            
-            <h1> {{ state }} <small> {{ tab }} </small> </h1> 
-            
+        <div class="page-header">
+
+            <h1> {{ state }} <small> {{ tab }} </small> </h1>
+
             <!--
             <div class="btn-group">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ state }} <span class="caret"></span>
                 </button>
-                
+
                 <ul class="dropdown-menu">
                     <li><a href="#/"> Home </a></li>
                     <li role="separator" class="divider"></li>
@@ -131,15 +135,15 @@
                     <li><a> Logisch Programmeren en Zoektechnieken </a></li>
                     <li><a> Compilerbouw </a></li>
                     <li><a> Moderne Databases </a></li>
-                    
+
                   </ul>
             </div>
-            
+
             <div class="btn-group" ng-hide="state == 'Home'">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ tab }} <span class="caret"></span>
                 </button>
-                
+
                 <ul class="dropdown-menu">
                     <li><a href="#/re/announcements"> Announcements </a></li>
                     <li><a href="#/re/courseinformation"> Course information </a></li>
@@ -150,14 +154,14 @@
                   </ul>
             </div>
             -->
-            
-        </div>  
+
+        </div>
         </div>
     </div>
 
     <div ng-view> </div>
 
 </div>
-    
+
 </body>
 </html>
