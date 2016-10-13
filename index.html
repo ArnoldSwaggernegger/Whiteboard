@@ -75,16 +75,16 @@
         app.controller("MyController", function($scope, $location, state, tab) {
             $scope.$parent.state = state;
             $scope.$parent.tab = tab;
-            $scope.go = function ( path ) {
-              $('.popover').hide();
-              $location.path( path );
+            $scope.go = function(path) {
+                $('.popover').hide();
+                $location.path(path);
             };
         });
     </script>
 
 </head>
 
-<body ng-app="myApp" ng-init="submitted1 = false; submitted2 = false; submitted3 = false;">
+<body ng-app="myApp" ng-init="submitted = [true, false, false, false, false];">
 
 <nav class="navbar navbar-default navbar-static-top">
     <div class="container">

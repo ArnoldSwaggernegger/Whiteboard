@@ -1,4 +1,7 @@
-<h3> Group Assignment 1 <small> Due on Sunday 2 October. </small><span class="label label-success"> Submitted </span> </h3>
+<h3> Group Assignment 1 <small> Due on Sunday 2 October. </small>
+    <span class="label label-danger"  ng-hide="submitted[0]"> Overdue </span> 
+    <span class="label label-success" ng-show="submitted[0]"> Submitted </span>
+</h3> 
 
 <p>Make a concrete task model for two courses that are quite different in nature. Do this from the perspective of student tasks in these courses. Concrete: your model should present reflect the course items as concretely as possible, making it very specific for the course you model. For every task identify the actual and desired use of blackboard. </p> 
 
@@ -24,9 +27,13 @@
     <li>Log interesting findings and effective questions.</li>
 </ol>
 
-<button class="btn btn-success btn-large" disabled> Submit </button>
+<button class="btn btn-danger  " disabled ng-hide="submitted[0]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[0]"> Submit </button>
 
-<h3> Reading Assignment 1 <small> Due on Wednesday 5 October. </small> <span class="label label-success"> Submitted </span> </h3>
+<h3> Reading Assignment 1 <small> Due on Wednesday 5 October. </small> 
+    <span class="label label-danger"  ng-hide="submitted[1]"> Overdue </span> 
+    <span class="label label-success" ng-show="submitted[1]"> Submitted </span>  
+</h3>
 
 <p class="lead">This week's theme: Getting started</p>
 <ul>
@@ -58,4 +65,5 @@ Required reading before Sunday:
     <li>Van Lamsweerde, Requirements Engineering Chapter 1, Setting the Scene (pp. 3-60)</li>
 </ul>
 
-<button class="btn btn-success btn-large" disabled> Submit </button>
+<button class="btn btn-danger  " disabled ng-hide="submitted[1]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[1]"> Submit </button>

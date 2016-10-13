@@ -1,4 +1,7 @@
-<h3> Group Assignment 3 <small> Due on Sunday 23 October. </small> <span class="label label-warning" ng-hide="submitted3"> Due soon </span> <span class="label label-success" ng-show="submitted3"> Submitted </span> </h3>
+<h3> Group Assignment 3 <small> Due on Sunday 23 October. </small>
+    <span class="label label-warning" ng-hide="submitted[4]"> Due Soon </span> 
+    <span class="label label-success" ng-show="submitted[4]"> Submitted </span>  
+</h3>
 
 <p class="lead">Research [2 hours]</p>
 
@@ -26,5 +29,5 @@
 
 <p><a>http://www.designkit.org/methods/33</a></p>
 
-<button class="btn btn-primary btn-large" ng-click="$parent.$parent.submitted3=true" ng-hide="submitted3"> Submit </button>
-<button class="btn btn-success btn-large" disabled ng-show="submitted3"> Submit </button>
+<button class="btn btn-warning " ng-click="$parent.$parent.submitted[4]=true" ng-hide="submitted[4]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[4]"> Submit </button>

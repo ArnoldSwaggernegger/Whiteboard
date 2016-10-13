@@ -1,4 +1,7 @@
-<h3> Group Assignment 2 <small> Due on Sunday 9 October. </small> <span class="label label-danger" ng-hide="submitted1"> Overdue </span> <span class="label label-success" ng-show="submitted1"> Submitted </span> </h3>
+<h3> Group Assignment 2 <small> Due on Sunday 9 October. </small> 
+    <span class="label label-danger"  ng-hide="submitted[2]"> Overdue </span> 
+    <span class="label label-success" ng-show="submitted[2]"> Submitted </span> 
+</h3>
 
 <p class="lead"> RESEARCH: [2 hours] </p>
 
@@ -20,9 +23,13 @@
 
 <p> You begin to gather quite a lot of data. Take one to two hours to set up your administration in such a way that it is easy to continuously restructure your RE focus, remember: you still have to learn what the right questions are. Discuss the ideas from the paper on Contextual Design how you structure your data here. </p>
 
-<button class="btn btn-primary btn-large" disabled ng-hide="submitted1"> Submit </button>
+<button class="btn btn-danger  " disabled ng-hide="submitted[2]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[2]"> Submit </button>
 
-<h3> Reading Assignment 2 <small> Due on Wednesday 12 October. </small> <span class="label label-warning" ng-hide="submitted2"> Due Soon </span> <span class="label label-success" ng-show="submitted2"> Submitted </span> </h3>
+<h3> Reading Assignment 2 <small> Due on Wednesday 12 October. </small> 
+    <span class="label label-warning" ng-hide="submitted[3]"> Due Soon </span> 
+    <span class="label label-success" ng-show="submitted[3]"> Submitted </span> 
+</h3>
 
 <p class="lead"> This week's theme: Getting rich and useful data </p>
 
@@ -41,5 +48,5 @@
 
 <p> For this assignment you should reference literature. Explore multiple sources. Look at empirical and anecdotal evidence. Provide an annotated bibliography of sources you consider relevant. </p>
 
-<button class="btn btn-primary btn-large" ng-click="$parent.$parent.submitted2=true" ng-hide="submitted2"> Submit </button>
-<button class="btn btn-success btn-large" disabled ng-show="submitted2"> Submit </button>
+<button class="btn btn-warning " ng-click="$parent.$parent.submitted[3]=true" ng-hide="submitted[3]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[3]"> Submit </button>
