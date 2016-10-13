@@ -1,6 +1,8 @@
 <div class="row">
+   
     <div class="col-md-4">
         <h2> Courses </h2>
+        <h3> Recently used </h3>
         <table class="table">
             <tr>
                 <th> 2016 </th>
@@ -21,28 +23,28 @@
                 <td> Compilerbouw </td>
             </tr>
             <tr>
-                <td> Moderne Databases </td>
+                <td> <a> More courses </a> </td>
             </tr>
         </table>
     </div>
-
-    <div class="col-md-4">
-        <h2> Announcements </h2>
-        <div ng-include="'content/announcements.htm'"></div>
-    </div>
-
+    
     <div class="col-md-4">
         <h2> Deadlines </h2>
-        <div class="alert alert-danger"  role="alert" ng-hide="(4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) == 0">
+        
+        <!-- 
+        <div class="alert alert-danger" ng-hide="(4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) == 0">
             You have 
             {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) }}  overdue
-            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3])  > 1 ? "assignments" : "assignment" }}!
+            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3])  > 1 ? "assignments" : "assignment" }}! <br><br>
+            Submitting overdue assignments is disabled for the following course: Requirements Engineering.
         </div>
         <div class="alert alert-warning" role="alert" ng-hide="(3 - submitted[4] - submitted[5] - submitted[6]) == 0">
             You have 
             {{ (3 - submitted[4] - submitted[5] - submitted[6]) }}
             {{ (3 - submitted[4] - submitted[5] - submitted[6])  > 1 ? "assignments" : "assignment" }} to be submitted soon.
         </div>
+        -->
+        
         <h3> October </h3>
         <table class="table">
         
@@ -127,4 +129,44 @@
             </tr>
         </table>
     </div>
+    
+    <div class="col-md-4">
+        <h2> Messages </h2>
+        <div class="panel panel-danger" ng-hide="(4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) == 0">
+            <div class="panel-heading"> Warning </div>
+            <div class="panel-body">
+            You have 
+            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) }}  overdue
+            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3])  > 1 ? "assignments" : "assignment" }}! <br><br>
+            Submitting overdue assignments is disabled for the following course: Requirements Engineering.
+            </div>
+        </div>
+        
+        <div class="panel panel-warning" ng-hide="(3 - submitted[4] - submitted[5] - submitted[6]) == 0">
+        <div class="panel-heading"> Reminder </div>
+            <div class="panel-body">
+            You have 
+            {{ (3 - submitted[4] - submitted[5] - submitted[6]) }}
+            {{ (3 - submitted[4] - submitted[5] - submitted[6])  > 1 ? "assignments" : "assignment" }} to be submitted soon.
+            </div>
+        </div>
+        
+        <!--
+        <div class="panel panel-info">
+        <div class="panel-heading"> Announcements </div>
+            <div class="panel-body">
+            You have 1 new announcement for Requirements Engineering.
+            </div>
+        </div>
+        -->
+    </div>
 </div>
+
+<!--
+<div class="row">
+    <div class="col-md-6"> 
+        <h2> Announcements </h2>
+        <div ng-include="'content/announcements.htm'"></div>
+    </div>
+</div>
+-->

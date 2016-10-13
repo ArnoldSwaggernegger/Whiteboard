@@ -1,9 +1,11 @@
-<div class="col-md-4">   
+<div class="col-md-3">   
     <h2> Navigation </h2>
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/announcements"> Announcements </a>    
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/courseinformation"> Course information </a>
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/coursematerials"> Course materials </a>
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/assignments"> Assignments </a>
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/groups"> Groups </a>
-    <a type="button" class="btn btn-default btn-lg btn-block" href="#/re/grades"> Grades </a>
+    <div class="list-group">
+        <a type="button" class="list-group-item" ng-class="{'active': tab == 'Announcements'}" href="#/re/announcements"> Announcements </a>    
+        <a type="button" class="list-group-item" ng-class="{'active': tab == 'Course Information'}" href="#/re/courseinformation"> Course information </a>
+        <a type="button" class="list-group-item" ng-class="{'active': tab == 'Course Materials'}" href="#/re/coursematerials"> Course materials </a>
+        <a type="button" class="list-group-item" ng-class="{'active': ((tab == 'Assignments') || (tab == 'Assignments Week 1') || (tab == 'Assignments Week 2') || (tab == 'Assignments Week 3'))}" href="#/re/assignments"> Assignments </a>
+        <a type="button" class="list-group-item" ng-class="{'active': tab == 'Groups'}" href="#/re/groups"> Groups </a>
+        <a type="button" class="list-group-item" ng-class="{'active': tab == 'Grades'}" href="#/re/grades"> Grades </a>
+    </div>
 </div>
