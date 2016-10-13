@@ -33,15 +33,15 @@
 
     <div class="col-md-4">
         <h2> Deadlines </h2>
-        <div class="alert alert-danger"  role="alert" ng-hide="(3 - submitted[0] - submitted[1] - submitted[2]) == 0">
+        <div class="alert alert-danger"  role="alert" ng-hide="(4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) == 0">
             You have 
-            {{ (3 - submitted[0] - submitted[1] - submitted[2]) }}  overdue
-            {{ (3 - submitted[0] - submitted[1] - submitted[2])  > 1 ? "assignments" : "assignment" }}!
+            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) }}  overdue
+            {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3])  > 1 ? "assignments" : "assignment" }}!
         </div>
-        <div class="alert alert-warning" role="alert" ng-hide="(2 - submitted[3] - submitted[4]) == 0">
+        <div class="alert alert-warning" role="alert" ng-hide="(3 - submitted[4] - submitted[5] - submitted[6]) == 0">
             You have 
-            {{ (2 - submitted[3] - submitted[4]) }}
-            {{ (2 - submitted[3] - submitted[4])  > 1 ? "assignments" : "assignment" }} to be submitted soon.
+            {{ (3 - submitted[4] - submitted[5] - submitted[6]) }}
+            {{ (3 - submitted[4] - submitted[5] - submitted[6])  > 1 ? "assignments" : "assignment" }} to be submitted soon.
         </div>
         <h3> October </h3>
         <table class="table">
@@ -88,7 +88,7 @@
             <tr>
                 <td>10</td>
                 <td>11</td>
-                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Reading Assignment 2 for Requirements Engineering is due soon." data-placement="top" ng-hide="submitted[3]" ng-click="go('/re/assignments/week2')">12</td>
+                <td tabindex="0" class="btn-danger" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Reading Assignment 2 for Requirements Engineering is ovderdue." data-placement="top" ng-hide="submitted[3]" ng-click="go('/re/assignments/week2')">12</td>
                 <td tabindex="0" class="btn-success" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Reading Assignment 2 for Requirements Engineering has been submitted." data-placement="top" ng-show="submitted[3]"  ng-click="go('/re/assignments/week2')">12</td>
                 <td>13</td>
                 <td>14</td>
@@ -100,15 +100,17 @@
                 <td>18</td>
                 <td>19</td>
                 <td>20</td>
-                <td>21</td>
+                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Preparation Master Project 1 for Requirements Engineering is due soon." data-placement="top" ng-hide="submitted[4]" ng-click="go('/re/assignments/week2')">21</td>
+                <td tabindex="0" class="btn-success" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Preparation Master Project 1 for Requirements Engineering has been submitted." data-placement="top" ng-show="submitted[4]" ng-click="go('/re/assignments/week2')">21</td>
                 <td>22</td>
-                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Group Assignment 3 for Requirements Engineering is due soon." data-placement="top" ng-hide="submitted[4]" ng-click="go('/re/assignments/week3')">23</td>
-                <td tabindex="0" class="btn-success" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Group Assignment 3 for Requirements Engineering has been submitted." data-placement="top" ng-show="submitted[4]" ng-click="go('/re/assignments/week3')">23</td>
+                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Group Assignment 3 for Requirements Engineering is due soon." data-placement="top" ng-hide="submitted[5]" ng-click="go('/re/assignments/week3')">23</td>
+                <td tabindex="0" class="btn-success" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Group Assignment 3 for Requirements Engineering has been submitted." data-placement="top" ng-show="submitted[5]" ng-click="go('/re/assignments/week3')">23</td>
             </tr>
             <tr>
                 <td>24</td>
                 <td>25</td>
-                <td>26</td>
+                <td tabindex="0" class="btn-warning" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Reading Assignment 3 for Requirements Engineering is due soon." data-placement="top" ng-hide="submitted[6]" ng-click="go('/re/assignments/week3')">26</td>
+                <td tabindex="0" class="btn-success" role="button" data-toggle="popover" data-trigger="hover" data-container="body" data-content="Reading Assignment 3 for Requirements Engineering has been submitted." data-placement="top" ng-show="submitted[6]" ng-click="go('/re/assignments/week3')">26</td>
                 <td>27</td>
                 <td>28</td>
                 <td>29</td>

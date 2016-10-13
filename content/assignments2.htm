@@ -23,11 +23,11 @@
 
 <p> You begin to gather quite a lot of data. Take one to two hours to set up your administration in such a way that it is easy to continuously restructure your RE focus, remember: you still have to learn what the right questions are. Discuss the ideas from the paper on Contextual Design how you structure your data here. </p>
 
-<button class="btn btn-danger  " disabled ng-hide="submitted[2]"> Submit </button>
-<button class="btn btn-success " disabled ng-show="submitted[2]"> Submit </button>
+<button class="btn btn-danger " disabled ng-hide="submitted[2]"> Submit </button>
+<button class="btn btn-success" disabled ng-show="submitted[2]"> Submit </button>
 
 <h3> Reading Assignment 2 <small> Due on Wednesday 12 October. </small> 
-    <span class="label label-warning" ng-hide="submitted[3]"> Due Soon </span> 
+    <span class="label label-danger"  ng-hide="submitted[3]"> Overdue </span> 
     <span class="label label-success" ng-show="submitted[3]"> Submitted </span> 
 </h3>
 
@@ -48,5 +48,20 @@
 
 <p> For this assignment you should reference literature. Explore multiple sources. Look at empirical and anecdotal evidence. Provide an annotated bibliography of sources you consider relevant. </p>
 
-<button class="btn btn-warning " ng-click="$parent.$parent.submitted[3]=true" ng-hide="submitted[3]"> Submit </button>
-<button class="btn btn-success " disabled ng-show="submitted[3]"> Submit </button>
+<button class="btn btn-danger"  disabled ng-hide="submitted[3]"> Submit </button>
+<button class="btn btn-success" disabled ng-show="submitted[3]"> Submit </button>
+
+<h3> Preparation Master Project 1 <small> Due on Friday 21 October. </small>
+    <span class="label label-warning" ng-hide="submitted[4]"> Due Soon </span> 
+    <span class="label label-success" ng-show="submitted[4]"> Submitted </span>  
+</h3>
+
+<p><a> Multi-Criteria Code Refactoring Using Search-Based Software
+Engineering: An Industrial Case Study.pdf </a></p>
+
+<p> Submit a summary of the paper 'Multi-Criteria Code Refactoring Using Search-Based Software
+Engineering: An Industrial Case Study' as discussed in the lecture. The summary should be around 1 A4 of text. Also fill in the evaluation form shown in the lecture slides.</p>
+
+<button class="btn btn-warning " ng-click="$parent.$parent.submitted[4]=true" ng-hide="submitted[4]"> Submit </button>
+<button class="btn btn-success " disabled ng-show="submitted[4]"> Submit </button>
+
