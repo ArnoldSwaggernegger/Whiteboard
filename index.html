@@ -23,7 +23,7 @@
             .when("/", {
                 controller: "MyController",
                 templateUrl : "home.htm",
-                resolve : { state: function() { return 'Home' }, tab: function() { return  ''} }
+                resolve : { state: function() { return 'Whiteboard' }, tab: function() { return  'Home'} }
             })
             .when("/re/announcements", {
                 controller: "MyController",
@@ -99,15 +99,7 @@
             </button> -->
             <a class="navbar-brand" href="#/">Whiteboard</a>
         </div>
-
-        <!--
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a href="#"> Home </a></li>
-                <li><a href="#"> Link </a></li>
-             </ul>
-        </div>
-        -->
+        
   </div>
 </nav>
 
@@ -139,7 +131,7 @@
                   </ul>
             </div>
 
-            <div class="btn-group" ng-hide="state == 'Home'">
+            <div class="btn-group" ng-hide="state == 'Whiteboard'">
                 <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{ tab }} <span class="caret"></span>
                 </button>

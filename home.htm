@@ -133,17 +133,17 @@
     <div class="col-md-4">
         <h2> Messages </h2>
         <div class="panel panel-danger" ng-hide="(4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) == 0">
-            <div class="panel-heading"> Warning </div>
+            <div class="panel-heading"> <strong> Warning </strong> </div>
             <div class="panel-body">
             You have 
             {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3]) }}  overdue
             {{ (4 - submitted[0] - submitted[1] - submitted[2] - submitted[3])  > 1 ? "assignments" : "assignment" }}! <br><br>
-            Submitting overdue assignments is disabled for the following course: Requirements Engineering.
+            Submitting overdue assignments is disabled for Requirements Engineering.
             </div>
         </div>
         
         <div class="panel panel-warning" ng-hide="(3 - submitted[4] - submitted[5] - submitted[6]) == 0">
-        <div class="panel-heading"> Reminder </div>
+        <div class="panel-heading"> <strong> Reminder </strong> </div>
             <div class="panel-body">
             You have 
             {{ (3 - submitted[4] - submitted[5] - submitted[6]) }}
@@ -151,14 +151,13 @@
             </div>
         </div>
         
-        <!--
         <div class="panel panel-info">
-        <div class="panel-heading"> Announcements </div>
+        <div class="panel-heading"> <strong> Announcements </strong> </div>
             <div class="panel-body">
             You have 1 new announcement for Requirements Engineering.
             </div>
         </div>
-        -->
+        
     </div>
 </div>
 
